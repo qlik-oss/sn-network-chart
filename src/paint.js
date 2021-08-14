@@ -1,4 +1,4 @@
-import { Network } from 'vis/index-network';
+import { Network } from 'vis-network';
 import qlik from 'qlik';
 import { createTooltipHTML } from './tooltip';
 import { escapeHTML } from './utilities';
@@ -151,6 +151,12 @@ function paint ( $element, layout, qTheme, component ) {
           },
           smooth: {
             type: layout.edgeType
+          },
+          arrows:  { 
+            to: { 
+              enabled: layout.displayEdgeArrowTo,
+              scaleFactor: layout.edgeArrowScale
+            }
           }
         },
         interaction: {

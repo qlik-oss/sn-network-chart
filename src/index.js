@@ -121,78 +121,126 @@ const component = {
         type: "items",
         label: "Settings",
         items: {
-          edgeType: {
-            ref: "edgeType",
-            type: "string",
-            component: "dropdown",
-            label: "Edge Type",
-            options: [
-              { value: 'dynamic' },
-              { value: 'continuous' },
-              { value: 'discrete' },
-              { value: 'diagonalCross' },
-              { value: 'straightCross' },
-              { value: 'horizontal' },
-              { value: 'vertical' },
-              { value: 'curvedCW' },
-              { value: 'curvedCCW' },
-              { value: 'cubicBezier' }
-            ],
-            defaultValue: "dynamic"
+          configHeader: {
+            component: "expandable-items",
+            items: {
+              nodes: {
+                type: "items",
+                label: "Nodes",
+                items: {
+                  nodeShape: {
+                    ref: "nodeShape",
+                    type: "string",
+                    component: "dropdown",
+                    label: "Node Shape",
+                    options: [
+                      { value: 'diamond' },
+                      { value: 'dot' },
+                      { value: 'hexagon' },
+                      { value: 'square' },
+                      { value: 'star' },
+                      { value: 'triangle' },
+                      { value: 'triangleDown' }
+                    ],
+                    defaultValue: "dot"
+                  },
+                },
+              },
+              edges: {
+                type: "items",
+                label: "Edges",
+                items: {
+                  edgeType: {
+                    ref: "edgeType",
+                    type: "string",
+                    component: "dropdown",
+                    label: "Edge Type",
+                    options: [
+                      { value: 'dynamic' },
+                      { value: 'continuous' },
+                      { value: 'discrete' },
+                      { value: 'diagonalCross' },
+                      { value: 'straightCross' },
+                      { value: 'horizontal' },
+                      { value: 'vertical' },
+                      { value: 'curvedCW' },
+                      { value: 'curvedCCW' },
+                      { value: 'cubicBezier' }
+                    ],
+                    defaultValue: "dynamic"
+                  },
+                  displayEdgeLabel : {
+                    ref: "displayEdgeLabel",
+                    type: "boolean",
+                    component: "switch",
+                    label: "Display Edge Value",
+                    options: [{
+                      value: true,
+                      label: "On"
+                    }, {
+                      value: false,
+                      label: "Off"
+                    }],
+                    defaultValue: false
+                  },
+                  posEdgeLabel: {
+                    ref: "posEdgeLabel",
+                    type: "string",
+                    component: "dropdown",
+                    label: "Position Edge Label",
+                    options: [
+                      { value: 'top' }, { value: 'middle' }, { value: 'bottom' }, { value: 'horizontal' }
+                    ],
+                    defaultValue: "top"
+                  },
+                  displayEdgeArrowTo : {
+                    ref: "displayEdgeArrowTo",
+                    type: "boolean",
+                    component: "switch",
+                    label: "Display Edge Arrow",
+                    options: [{
+                      value: true,
+                      label: "On"
+                    }, {
+                      value: false,
+                      label: "Off"
+                    }],
+                    defaultValue: false
+                  },
+                  edgeArrowScale: {
+                    ref: "edgeArrowScale",
+                    type: "number",
+                    component: "slider",
+                    label: "Arrow size",
+                    min: 0,
+                    max: 5,
+                    step: 0.5,
+                    defaultValue: 1
+                  },                  
+                },
+              },
+              general: {
+                type: "items",
+                label: "General",
+                items: {
+                  shadowMode: {
+                    ref: "shadowMode",
+                    type: "boolean",
+                    component: "switch",
+                    label: "Display Shadow",
+                    options: [{
+                      value: true,
+                      label: "On"
+                    }, {
+                      value: false,
+                      label: "Off"
+                    }],
+                    defaultValue: false
+                  }
+                },
+              },
+            },
           },
-          displayEdgeLabel : {
-            ref: "displayEdgeLabel",
-            type: "boolean",
-            component: "switch",
-            label: "Display Edge Value",
-            options: [{
-              value: true,
-              label: "On"
-            }, {
-              value: false,
-              label: "Off"
-            }],
-            defaultValue: false
-          },
-          posEdgeLabel: {
-            ref: "posEdgeLabel",
-            type: "string",
-            component: "dropdown",
-            label: "Position Edge Label",
-            options: [
-              { value: 'top' }, { value: 'middle' }, { value: 'bottom' }, { value: 'horizontal' }
-            ],
-            defaultValue: "top"
-          },
-          nodeShape: {
-            ref: "nodeShape",
-            type: "string",
-            component: "dropdown",
-            label: "Node Shape",
-            options: [
-              { value: 'dot' },
-              { value: 'square' },
-              { value: 'star' },
-              { value: 'triangle' },
-              { value: 'triangleDown' },
-              { value: 'diamond' }
-            ],
-            defaultValue: "dot"
-          },
-          shadowMode: {
-            ref: "shadowMode",
-            type: "boolean",
-            component: "switch",
-            label: "Display Shadow",
-            options: [{
-              value: true,
-              label: "On"
-            }, {
-              value: false,
-              label: "Off"
-            }],
-            defaultValue: false
-          }
         }
       },
       about: {
