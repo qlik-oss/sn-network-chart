@@ -10,38 +10,38 @@ var DIST = './dist';
 var VERSION = process.env.VERSION || 'local-dev';
 
 gulp.task('qext', function () {
-	var qext = {
-		name: 'Network chart',
-		type: 'visualization',
-		description: pkg.description + '\nVersion: ' + VERSION,
-		version: VERSION,
-		icon: 'bubbles',
-		preview: 'network.png',
-		keywords: 'qlik-sense, visualization',
-		author: pkg.author,
-		homepage: pkg.homepage,
-		license: pkg.license,
-		repository: pkg.repository,
-		dependencies: {
-			'qlik-sense': '>=5.5.x'
-		}
-	};
-	if (pkg.contributors) {
-		qext.contributors = pkg.contributors;
-	}
-	var src = require('stream').Readable({
-		objectMode: true
-	});
-	src._read = function () {
-		this.push(new gutil.File({
-			cwd: '',
-			base: '',
-			path: pkg.name + '.qext',
-			contents: Buffer.from(JSON.stringify(qext, null, 4))
-		}));
-		this.push(null);
-	};
-	return src.pipe(gulp.dest(DIST));
+  var qext = {
+    name: 'Network chart',
+    type: 'visualization',
+    description: pkg.description + '\nVersion: ' + VERSION,
+    version: VERSION,
+    icon: 'bubbles',
+    preview: 'network.png',
+    keywords: 'qlik-sense, visualization',
+    author: pkg.author,
+    homepage: pkg.homepage,
+    license: pkg.license,
+    repository: pkg.repository,
+    dependencies: {
+      'qlik-sense': '>=5.5.x'
+    }
+  };
+  if (pkg.contributors) {
+    qext.contributors = pkg.contributors;
+  }
+  var src = require('stream').Readable({
+    objectMode: true
+  });
+  src._read = function () {
+    this.push(new gutil.File({
+      cwd: '',
+      base: '',
+      path: pkg.name + '.qext',
+      contents: Buffer.from(JSON.stringify(qext, null, 4))
+    }));
+    this.push(null);
+  };
+  return src.pipe(gulp.dest(DIST));
 });
 
 gulp.task('clean', function(){
