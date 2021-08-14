@@ -33,6 +33,13 @@
     "webpack": "5.50.0"
   },
   "dependencies": {
-    "vis": "4.21.0"
+    "@egjs/hammerjs": "2.0.17",
+    "acorn": "8.4.1",
+    "keycharm": "0.4.0",
+    "timsort": "0.3.0",
+    "uuid": "8.3.2",
+    "vis-data": "7.1.2",
+    "vis-network": "9.0.5",
+    "vis-util": "5.0.2"
   }
 }
