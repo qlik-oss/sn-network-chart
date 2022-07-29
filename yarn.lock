@@ -8753,15 +8753,15 @@ vendors@^1.0.0:
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
 
-vis-data@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/vis-data/-/vis-data-7.0.0.tgz#71ff8ec06e4d0b99f1c8cdecfdf97309eb4562cf"
-  integrity sha512-qKpyAQ9UMT0QygLbCulgabKkgfo8aVkuWSqhvEiaah/iy/Dvj17iMFChUU+UIioorWlweXcp5ziXoMLIl7hTAg==
+vis-data@7.1.4:
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/vis-data/-/vis-data-7.1.4.tgz#90e5e796a79e1901de14c0808fb32a1a0735c1dc"
+  integrity sha512-usy+ePX1XnArNvJ5BavQod7YRuGQE1pjFl+pu7IS6rCom2EBoG0o1ZzCqf3l5US6MW51kYkLR+efxRbnjxNl7w==
 
-vis-network@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/vis-network/-/vis-network-9.1.0.tgz#511db833b68060f279bedc4a852671261d40204e"
-  integrity sha512-rx96L144RJWcqOa6afjiFyxZKUerRRbT/YaNMpsusHdwzxrVTO2LlduR45PeJDEztrAf3AU5l2zmiG+1ydUZCw==
+vis-network@9.1.2:
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/vis-network/-/vis-network-9.1.2.tgz#ddaca300a9764bbf1646a0aa03eb28fe55823ca8"
+  integrity sha512-BdapguKg7sk3NvdZaDsM7T6rNhOBFz0/F4ZScxctK4klRzQPLQPTEcmbioXaZhMkkgWymzBR3lFCxL1q+eYyAw==
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
