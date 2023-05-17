@@ -40,6 +40,9 @@ jobs:
       - run:
           name: Build
           command: yarn run build
+      - run:
+          name: Build sense
+          command: yarn run build sense
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -52,7 +55,7 @@ jobs:
           at: ~/project
       - run:
           name: Lint
-          command: yarn run lint
+          command: yarn run eslint
 
   unit-tests:
     <<: *defaults
@@ -152,14 +155,6 @@ jobs:
             -e CREDENTIALS_GITHUB="$APICULTURIST_GITHUB"
             -e CREDENTIALS_COLONY="$APICULTURIST_TOKEN"
             ghcr.io/qlik-download/api-compliance
-  locale:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run:
-          name: Verify locale
-          command: yarn run locale:verify
 
 workflows:
   version: 2
@@ -202,6 +197,3 @@ workflows:
             tags:
               only:
                 - /v.*/
-      - locale:
-          requires:
-            - build

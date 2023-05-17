@@ -36,6 +36,7 @@
     "eslint": "8.40.0",
     "jest": "29.5.0",
     "jest-environment-jsdom": "29.5.0",
+    "jest-junit": "^16.0.0",
     "@scriptappy/cli": "0.8.0",
     "@scriptappy/from-jsdoc": "0.17.0",
     "shx": "0.3.4",
