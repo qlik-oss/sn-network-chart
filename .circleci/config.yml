@@ -72,37 +72,6 @@ jobs:
       - store_artifacts:
           path: coverage
 
-  # rendering-tests:
-  #   <<: *defaults
-  #   docker:
-  #     - image: mcr.microsoft.com/playwright:focal
-  #   environment:
-  #     NODE_ENV: development
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/project
-  #     - run:
-  #         name: Install playwright
-  #         command: npx playwright install
-  #     - run:
-  #         name: Rendering tests
-  #         command: yarn run test:rendering
-  #     - store_artifacts:
-  #         path: test/rendering/render.mjs-snapshots
-  #     - store_artifacts:
-  #         path: test/rendering/artifacts
-  #     - store_artifacts:
-  #         path: test/rendering/test-report
-
-  # types:
-  #   <<: *defaults
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/project
-  #     - run:
-  #         name: Types
-  #         command: yarn run types:check
-
   api-spec:
     <<: *defaults
     steps:
@@ -203,13 +172,7 @@ workflows:
       - unit-tests:
           requires:
             - build
-      - rendering-tests:
-          requires:
-            - build
       - lint:
-          requires:
-            - build
-      - types:
           requires:
             - build
       - api-spec:
@@ -222,9 +185,7 @@ workflows:
           requires:
             - build
             - unit-tests
-           # - rendering-tests
             - lint
-           # - types
             - api-spec
           filters:
             branches:
