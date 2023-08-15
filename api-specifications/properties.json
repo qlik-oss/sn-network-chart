@@ -3,156 +3,162 @@
   "info": {
     "name": "@nebula.js/sn-network-chart:properties",
     "description": "Network chart generic object definition",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "license": "MIT",
     "stability": "experimental",
     "x-qlik-visibility": "public"
   },
-  "entries": {},
-  "definitions": {
-    "module.exports.version": {
-      "description": "Current version of this generic object definition",
-      "type": "string"
-    },
-    "module.exports.qHyperCubeDef": {
-      "description": "Extends `HyperCubeDef`, see Engine API: `HyperCubeDef`.",
-      "extends": [
-        {
-          "type": "HyperCubeDef"
+  "entries": {
+    "properties": {
+      "kind": "function",
+      "params": [],
+      "entries": {
+        "version": {
+          "description": "Current version of this generic object definition",
+          "type": "string"
+        },
+        "qHyperCubeDef": {
+          "description": "Extends `HyperCubeDef`, see Engine API: `HyperCubeDef`.",
+          "extends": [
+            {
+              "type": "HyperCubeDef"
+            }
+          ],
+          "kind": "object"
+        },
+        "showTitles": {
+          "optional": true,
+          "defaultValue": false,
+          "type": "boolean"
+        },
+        "title": {
+          "optional": true,
+          "defaultValue": "",
+          "type": "string"
+        },
+        "subtitle": {
+          "optional": true,
+          "defaultValue": "",
+          "type": "string"
+        },
+        "footnote": {
+          "optional": true,
+          "defaultValue": "",
+          "type": "string"
+        },
+        "edgeType": {
+          "optional": true,
+          "defaultValue": "dynamic",
+          "kind": "union",
+          "items": [
+            {
+              "kind": "literal",
+              "value": "'dynamic'"
+            },
+            {
+              "kind": "literal",
+              "value": "'continuous'"
+            },
+            {
+              "kind": "literal",
+              "value": "'discrete'"
+            },
+            {
+              "kind": "literal",
+              "value": "'diagonalCross'"
+            },
+            {
+              "kind": "literal",
+              "value": "'straightCross'"
+            },
+            {
+              "kind": "literal",
+              "value": "'horizontal'"
+            },
+            {
+              "kind": "literal",
+              "value": "'vertical'"
+            },
+            {
+              "kind": "literal",
+              "value": "'curvedCW'"
+            },
+            {
+              "kind": "literal",
+              "value": "'curvedCCW'"
+            },
+            {
+              "kind": "literal",
+              "value": "'cubicBezier'"
+            }
+          ]
+        },
+        "displayEdgeLabel": {
+          "optional": true,
+          "defaultValue": false,
+          "type": "boolean"
+        },
+        "posEdgeLabel": {
+          "optional": true,
+          "defaultValue": "top",
+          "kind": "union",
+          "items": [
+            {
+              "kind": "literal",
+              "value": "'top'"
+            },
+            {
+              "kind": "literal",
+              "value": "'middle'"
+            },
+            {
+              "kind": "literal",
+              "value": "'bottom'"
+            },
+            {
+              "kind": "literal",
+              "value": "'horizontal'"
+            }
+          ]
+        },
+        "nodeShape": {
+          "optional": true,
+          "defaultValue": "dot",
+          "kind": "union",
+          "items": [
+            {
+              "kind": "literal",
+              "value": "'dot'"
+            },
+            {
+              "kind": "literal",
+              "value": "'square'"
+            },
+            {
+              "kind": "literal",
+              "value": "'star'"
+            },
+            {
+              "kind": "literal",
+              "value": "'triangle'"
+            },
+            {
+              "kind": "literal",
+              "value": "'triangleDown'"
+            },
+            {
+              "kind": "literal",
+              "value": "'diamond'"
+            }
+          ]
+        },
+        "shadowMode": {
+          "optional": true,
+          "defaultValue": false,
+          "type": "boolean"
         }
-      ],
-      "kind": "object"
-    },
-    "module.exports.showTitles": {
-      "optional": true,
-      "defaultValue": false,
-      "type": "boolean"
-    },
-    "module.exports.title": {
-      "optional": true,
-      "defaultValue": "",
-      "type": "string"
-    },
-    "module.exports.subtitle": {
-      "optional": true,
-      "defaultValue": "",
-      "type": "string"
-    },
-    "module.exports.footnote": {
-      "optional": true,
-      "defaultValue": "",
-      "type": "string"
-    },
-    "module.exports.edgeType": {
-      "optional": true,
-      "defaultValue": "dynamic",
-      "kind": "union",
-      "items": [
-        {
-          "kind": "literal",
-          "value": "'dynamic'"
-        },
-        {
-          "kind": "literal",
-          "value": "'continuous'"
-        },
-        {
-          "kind": "literal",
-          "value": "'discrete'"
-        },
-        {
-          "kind": "literal",
-          "value": "'diagonalCross'"
-        },
-        {
-          "kind": "literal",
-          "value": "'straightCross'"
-        },
-        {
-          "kind": "literal",
-          "value": "'horizontal'"
-        },
-        {
-          "kind": "literal",
-          "value": "'vertical'"
-        },
-        {
-          "kind": "literal",
-          "value": "'curvedCW'"
-        },
-        {
-          "kind": "literal",
-          "value": "'curvedCCW'"
-        },
-        {
-          "kind": "literal",
-          "value": "'cubicBezier'"
-        }
-      ]
-    },
-    "module.exports.displayEdgeLabel": {
-      "optional": true,
-      "defaultValue": false,
-      "type": "boolean"
-    },
-    "module.exports.posEdgeLabel": {
-      "optional": true,
-      "defaultValue": "top",
-      "kind": "union",
-      "items": [
-        {
-          "kind": "literal",
-          "value": "'top'"
-        },
-        {
-          "kind": "literal",
-          "value": "'middle'"
-        },
-        {
-          "kind": "literal",
-          "value": "'bottom'"
-        },
-        {
-          "kind": "literal",
-          "value": "'horizontal'"
-        }
-      ]
-    },
-    "module.exports.nodeShape": {
-      "optional": true,
-      "defaultValue": "dot",
-      "kind": "union",
-      "items": [
-        {
-          "kind": "literal",
-          "value": "'dot'"
-        },
-        {
-          "kind": "literal",
-          "value": "'square'"
-        },
-        {
-          "kind": "literal",
-          "value": "'star'"
-        },
-        {
-          "kind": "literal",
-          "value": "'triangle'"
-        },
-        {
-          "kind": "literal",
-          "value": "'triangleDown'"
-        },
-        {
-          "kind": "literal",
-          "value": "'diamond'"
-        }
-      ]
-    },
-    "module.exports.shadowMode": {
-      "optional": true,
-      "defaultValue": false,
-      "type": "boolean"
+      }
     }
-  }
+  },
+  "definitions": {}
 }

@@ -1,4 +1,8 @@
-export default {
+/**
+ * @typedef {object}
+ * @entry
+ */
+const properties = {
   /**
    * Current version of this generic object definition
    * @type {string}
@@ -55,3 +59,5 @@ export default {
    */
   shadowMode: false,
 };
+
+export default properties;
