@@ -1,9 +1,6 @@
-# @nebula.js/sn-network-chart
+# sn-network-chart
 
-The network chart is built using [visjs network visualization](https://github.com/visjs/vis-network) to display networks of nodes and edges. It was originally forked from [miclae76/network-vis-chart](miclae76/network-vis-chart) and has since been converted to use Nebula.
-
-## Legacy build
-The chart before Nebula conversion and dependency updates can be found on the *release/legacy* branch. 
+A network chart to be used with nebula.js, built using [visjs network visualization](https://github.com/visjs/vis-network) to display networks of nodes and edges.
 
 ## Requirements
 
