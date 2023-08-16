@@ -17,5 +17,3 @@ exclude_patterns:
   - "src/**/*.test.tsx"
   - "*config*"
   - "test/**/__fixtures__"
-  - "theme"
-  - "mashup-example"
