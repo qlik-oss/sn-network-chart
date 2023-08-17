@@ -14,8 +14,7 @@
     "sense": "nebula sense --meta resources/meta.json && shx cp resources/network_chart_v1.png sn-network-chart-ext",
     "eslint": "eslint src",
     "spec": "sy from-jsdoc -c ./spec-configs/props.conf.js",
-    "test:unit": "jest",
-    "prepublishOnly": "shx rm -rf dist && shx rm -rf core/esm && shx rm -rf sn-network-chart-ext && yarn build && yarn sense"
+    "test:unit": "jest"
   },
   "files": [
     "api-specifications",
