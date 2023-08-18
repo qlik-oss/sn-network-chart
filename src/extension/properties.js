@@ -1,5 +1,6 @@
 /**
- * @typedef {object}
+ * @type {object}
+ * @extends {GenericObjectProperties}
  * @entry
  */
 const properties = {
@@ -10,7 +11,7 @@ const properties = {
   version: process.env.PACKAGE_VERSION,
   /**
    * Extends `HyperCubeDef`, see Engine API: `HyperCubeDef`.
-   * @extends {HyperCubeDef}
+   * @extends {EngineAPI.HyperCubeDef}
    */
   qHyperCubeDef: {
     qDimensions: [],

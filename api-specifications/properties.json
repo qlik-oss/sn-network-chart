@@ -10,8 +10,11 @@
   },
   "entries": {
     "properties": {
-      "kind": "function",
-      "params": [],
+      "extends": [
+        {
+          "type": "GenericObjectProperties"
+        }
+      ],
       "entries": {
         "version": {
           "description": "Current version of this generic object definition",
@@ -21,7 +24,7 @@
           "description": "Extends `HyperCubeDef`, see Engine API: `HyperCubeDef`.",
           "extends": [
             {
-              "type": "HyperCubeDef"
+              "type": "EngineAPI.HyperCubeDef"
             }
           ],
           "kind": "object"
@@ -157,7 +160,8 @@
           "defaultValue": false,
           "type": "boolean"
         }
-      }
+      },
+      "kind": "object"
     }
   },
   "definitions": {}
