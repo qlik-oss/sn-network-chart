@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get tag
-        run: git fetch --tags || git checkout tags/${{ inputs.VERSION }}
+        run: git fetch --tags && git checkout tags/${{ inputs.VERSION }}
       - name: Prepare API Compliance
         shell: bash
         run: |
