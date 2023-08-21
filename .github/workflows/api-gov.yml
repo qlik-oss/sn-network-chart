@@ -3,14 +3,10 @@ name: "API Governance"
 on:
   workflow_dispatch:
     inputs:
-      kind:
+      VERSION:
         type: string
         description: Version to run against
         default: ''
-
-inputs:
-  VERSION:
-    description: "The released version"
 
 jobs:
   api-gov:
