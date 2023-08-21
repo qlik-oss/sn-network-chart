@@ -1,6 +1,4 @@
 name: "API Governance"
-description: "Run api governance"
-author: "tsm@qlik.com"
 
 on:
   workflow_dispatch:
