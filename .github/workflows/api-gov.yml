@@ -10,6 +10,7 @@ on:
 
 jobs:
   api-gov:
+    runs-on: ubuntu-latest
     steps:
       - name: Prepare API Compliance
         shell: bash
