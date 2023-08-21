@@ -7,6 +7,10 @@ on:
         type: string
         description: Version to run against
         default: ''
+      SHA:
+        type: string
+        description: Sha of tag
+        default: ''
 
 jobs:
   api-gov:
@@ -14,8 +18,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Get tag
-        run: echo "CURRENT_SHA=$(git rev-list -n 1 tags/${{ inputs.VERSION }})" >> $GITHUB_ENV
       - name: Prepare API Compliance
         shell: bash
         run: |
@@ -28,7 +30,7 @@ jobs:
         run: |
           docker run --volumes-from specs \
               -e SPEC_PATHS="${{ secrets.API_KEY }}@/specs/properties.json" \
-              -e COMMIT_SHA="${{ $CURRENT_SHA }}" \
+              -e COMMIT_SHA="${{ inputs.SHA }}" \
               -e RELEASE_TAG="${{ inputs.VERSION }}" \
               -e CREDENTIALS_S3_SECRETKEY="${{ secrets.APICULTURIST_S3 }}" \
               -e CREDENTIALS_GITHUB="${{ secrets.APICULTURIST_GITHUB }}" \
