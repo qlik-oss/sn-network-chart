@@ -15,7 +15,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get tag
-        run: CURRENT_SHA=$(git rev-list -n 1 tags/${{ inputs.VERSION }})
+        run: echo "CURRENT_SHA=$(git rev-list -n 1 tags/${{ inputs.VERSION }})" >> $GITHUB_ENV
+        run:
       - name: Prepare API Compliance
         shell: bash
         run: |
