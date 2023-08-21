@@ -2,6 +2,14 @@ name: "API Governance"
 description: "Run api governance"
 author: "tsm@qlik.com"
 
+on:
+  workflow_dispatch:
+    inputs:
+      kind:
+        type: string
+        description: Version to run against
+        default: ''
+
 inputs:
   VERSION:
     description: "The released version"
