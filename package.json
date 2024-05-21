@@ -9,6 +9,7 @@
   "scripts": {
     "start": "nebula serve --build false --type qlik-network-chart",
     "watch": "nebula serve --type sn-network-chart",
+    "start:mfe": "nebula serve --build false --type qlik-network-chart --mfe",
     "watch:legacy": "nebula serve --type qlik-network-chart",
     "build": "nebula build --core core",
     "sense": "nebula sense --meta resources/meta.json && shx cp resources/network_chart_v1.png sn-network-chart-ext",

@@ -1,4 +1,4 @@
-import { dimLongDesc } from './strings';
+import { dimLongDesc } from "./strings";
 
 export default function ext() {
   return {
@@ -8,82 +8,94 @@ export default function ext() {
       items: {
         data: {
           uses: "data",
-          items:{
-            dimensions:{
+          items: {
+            dimensions: {
               disabledRef: "",
               items: {
                 helpDesc: {
-                  component: 'text',
-                  style: 'qlik-network-chart-italic-property',
-                  label: function(properties, handler) {
+                  component: "text",
+                  style: "qlik-network-chart-italic-property",
+                  label: function (properties, handler) {
                     var index;
                     handler.getDimensions().forEach((element, i) => {
-                      if(element.qDef.cId === properties.qDef.cId) {
+                      if (element.qDef.cId === properties.qDef.cId) {
                         index = i;
                       }
                     });
                     return dimLongDesc[index];
-                  }
-                }
-              }
+                  },
+                },
+              },
             },
             measures: {
-              disabledRef: ""
-            }
-          }
+              disabledRef: "",
+            },
+          },
         },
         sorting: {
-          uses: "sorting"
+          uses: "sorting",
         },
         addons: {
           uses: "addons",
           items: {
             dataHandling: {
-              uses: "dataHandling"
-            }
-          }
+              uses: "dataHandling",
+            },
+          },
         },
         settings: {
           type: "items",
-          uses: 'settings',
+          uses: "settings",
           items: {
             presentation: {
-              type: 'items',
+              type: "items",
               grouped: false,
-              translation: 'properties.presentation',
+              translation: "properties.presentation",
               items: {
+                stylingPanel: {
+                  component: "styling-panel",
+                  chartTitle: "Network chart",
+                  translation: "LayerStyleEditor.component.styling",
+                  subtitle: "LayerStyleEditor.component.styling",
+                  ref: "components",
+                  useGeneral: true,
+                  useBackground: true,
+                },
                 edgeType: {
                   ref: "edgeType",
                   type: "string",
                   component: "dropdown",
                   label: "Edge Type",
                   options: [
-                    { value: 'dynamic' },
-                    { value: 'continuous' },
-                    { value: 'discrete' },
-                    { value: 'diagonalCross' },
-                    { value: 'straightCross' },
-                    { value: 'horizontal' },
-                    { value: 'vertical' },
-                    { value: 'curvedCW' },
-                    { value: 'curvedCCW' },
-                    { value: 'cubicBezier' }
+                    { value: "dynamic" },
+                    { value: "continuous" },
+                    { value: "discrete" },
+                    { value: "diagonalCross" },
+                    { value: "straightCross" },
+                    { value: "horizontal" },
+                    { value: "vertical" },
+                    { value: "curvedCW" },
+                    { value: "curvedCCW" },
+                    { value: "cubicBezier" },
                   ],
-                  defaultValue: "dynamic"
+                  defaultValue: "dynamic",
                 },
-                displayEdgeLabel : {
+                displayEdgeLabel: {
                   ref: "displayEdgeLabel",
                   type: "boolean",
                   component: "switch",
                   label: "Display Edge Value",
-                  options: [{
-                    value: true,
-                    label: "On"
-                  }, {
-                    value: false,
-                    label: "Off"
-                  }],
-                  defaultValue: false
+                  options: [
+                    {
+                      value: true,
+                      label: "On",
+                    },
+                    {
+                      value: false,
+                      label: "Off",
+                    },
+                  ],
+                  defaultValue: false,
                 },
                 posEdgeLabel: {
                   ref: "posEdgeLabel",
@@ -91,9 +103,12 @@ export default function ext() {
                   component: "dropdown",
                   label: "Position Edge Label",
                   options: [
-                    { value: 'top' }, { value: 'middle' }, { value: 'bottom' }, { value: 'horizontal' }
+                    { value: "top" },
+                    { value: "middle" },
+                    { value: "bottom" },
+                    { value: "horizontal" },
                   ],
-                  defaultValue: "top"
+                  defaultValue: "top",
                 },
                 nodeShape: {
                   ref: "nodeShape",
@@ -101,64 +116,67 @@ export default function ext() {
                   component: "dropdown",
                   label: "Node Shape",
                   options: [
-                    { value: 'dot' },
-                    { value: 'square' },
-                    { value: 'star' },
-                    { value: 'triangle' },
-                    { value: 'triangleDown' },
-                    { value: 'diamond' }
+                    { value: "dot" },
+                    { value: "square" },
+                    { value: "star" },
+                    { value: "triangle" },
+                    { value: "triangleDown" },
+                    { value: "diamond" },
                   ],
-                  defaultValue: "dot"
+                  defaultValue: "dot",
                 },
                 shadowMode: {
                   ref: "shadowMode",
                   type: "boolean",
                   component: "switch",
                   label: "Display Shadow",
-                  options: [{
-                    value: true,
-                    label: "On"
-                  }, {
-                    value: false,
-                    label: "Off"
-                  }],
-                  defaultValue: false
-                }
-              }
-            }
-          }
+                  options: [
+                    {
+                      value: true,
+                      label: "On",
+                    },
+                    {
+                      value: false,
+                      label: "Off",
+                    },
+                  ],
+                  defaultValue: false,
+                },
+              },
+            },
+          },
         },
         about: {
-          component: 'items',
-          label: 'About',
+          component: "items",
+          label: "About",
           items: {
             header: {
-              label: 'Network chart',
-              style: 'header',
-              component: 'text'
+              label: "Network chart",
+              style: "header",
+              component: "text",
             },
             paragraph1: {
-              label:
-              `Network chart is Qlik Sense chart which
+              label: `Network chart is Qlik Sense chart which
               allows you to draw a network of connected
               nodes and edges from a data set to a sheet.`,
-              component: 'text'
+              component: "text",
             },
             paragraph2: {
-              label: 'Network chart is based upon an extension created by Michael Laenen.',
-              component: 'text'
-            }
-          }
-        }
-      }
+              label:
+                "Network chart is based upon an extension created by Michael Laenen.",
+              component: "text",
+            },
+          },
+        },
+      },
     },
     support: {
       export: true,
       snapshot: true,
-      exportData: true
+      exportData: true,
     },
     snapshot: {
-      canTakeSnapshot: true
+      canTakeSnapshot: true,
     },
   };
 }
