@@ -53,13 +53,8 @@ export default function ext() {
               translation: "properties.presentation",
               items: {
                 stylingPanel: {
-                  component: "styling-panel",
+                  uses: "stylingPanel",
                   chartTitle: "Network chart",
-                  translation: "LayerStyleEditor.component.styling",
-                  subtitle: "LayerStyleEditor.component.styling",
-                  ref: "components",
-                  useGeneral: true,
-                  useBackground: true,
                 },
                 edgeType: {
                   ref: "edgeType",
